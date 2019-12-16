@@ -4,8 +4,8 @@ import (
   "strings"
 )
 
-// getElementParts parses the tags for an attribute
-func getElementParts(input string) map[string]string {
+// parseElementParts parses the tags for an attribute
+func parseElementParts(input string) map[string]string {
   result := map[string]string{}
 
   parts := strings.Split(input, " ")

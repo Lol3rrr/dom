@@ -5,7 +5,7 @@ import (
   "reflect"
 )
 
-func TestGetElementParts(t *testing.T) {
+func TestParseElementParts(t *testing.T) {
   tables := []struct{
     Input string
     Output map[string]string
@@ -33,7 +33,7 @@ func TestGetElementParts(t *testing.T) {
     input := table.Input
     output := table.Output
 
-    result := getElementParts(input)
+    result := parseElementParts(input)
 
     if !reflect.DeepEqual(result, output) {
       t.Errorf("Did not parse the Parts right('%s'), expected '%v' but returned '%v' \n", input, output, result)

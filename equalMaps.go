@@ -6,12 +6,13 @@ func equalMaps(map1, map2 map[string]string) bool {
     return false
   }
 
-  for key := range map1 {
-    if _, ok := map2[key]; !ok {
+  for key, value := range map1 {
+    map2Value, ok := map2[key]
+    if !ok {
       return false
     }
 
-    if map1[key] != map2[key] {
+    if value != map2Value {
       return false
     }
   }
