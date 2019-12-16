@@ -1,4 +1,6 @@
 # dom
+[![Documentation](https://godoc.org/github.com/Lol3rrr/dom?status.svg)](https://godoc.org/github.com/Lol3rrr/dom)
+
 A basic dom utility written in golang
 
 ## Use-Cases
