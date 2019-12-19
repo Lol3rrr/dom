@@ -19,9 +19,11 @@ func benchParseTagList(parts int, b *testing.B) {
   }
 }
 
-func BenchmarkParseTagList_001Parts(b *testing.B) { benchParseTagList(0, b) }
-func BenchmarkParseTagList_005Parts(b *testing.B) { benchParseTagList(5, b) }
-func BenchmarkParseTagList_010Parts(b *testing.B) { benchParseTagList(10, b) }
-func BenchmarkParseTagList_025Parts(b *testing.B) { benchParseTagList(25, b) }
-func BenchmarkParseTagList_050Parts(b *testing.B) { benchParseTagList(50, b) }
-func BenchmarkParseTagList_100Parts(b *testing.B) { benchParseTagList(100, b) }
+func BenchmarkParseTagList_0001Parts(b *testing.B) { benchParseTagList(0, b) }
+func BenchmarkParseTagList_0005Parts(b *testing.B) { benchParseTagList(5, b) }
+func BenchmarkParseTagList_0010Parts(b *testing.B) { benchParseTagList(10, b) }
+func BenchmarkParseTagList_0025Parts(b *testing.B) { benchParseTagList(25, b) }
+func BenchmarkParseTagList_0050Parts(b *testing.B) { benchParseTagList(50, b) }
+func BenchmarkParseTagList_0100Parts(b *testing.B) { benchParseTagList(100, b) }
+func BenchmarkParseTagList_0500Parts(b *testing.B) { benchParseTagList(500, b) }
+func BenchmarkParseTagList_1000Parts(b *testing.B) { benchParseTagList(1000, b) }
