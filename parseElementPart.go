@@ -14,8 +14,5 @@ func parseElementPart(input string) (string, string) {
     return "", ""
   }
 
-  key := input[:dividerIndex]
-  value := input[dividerIndex + dividerLength:len(input) - 1]
-
-  return key, value
+  return input[:dividerIndex], input[dividerIndex + dividerLength:len(input) - 1]
 }
