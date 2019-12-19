@@ -10,11 +10,12 @@ func ParseTagList(tagInput string) (TagList) {
     Tags: make([]Tag, 0),
   }
 
-  offset := 0
-
   startIndex := strings.Index(tagInput, "<")
-  for startIndex >= 0 {
+  for startIndex > -1 {
     endIndex := strings.Index(tagInput, ">")
+    if endIndex == -1 {
+      break
+    }
 
     content := tagInput[startIndex + 1: endIndex]
     tagType, tagAtr := parseElementInfo(content)
@@ -25,7 +26,6 @@ func ParseTagList(tagInput string) (TagList) {
     result.Tags = append(result.Tags, tag)
 
     tagInput = tagInput[endIndex + 1:]
-    offset += endIndex + 1
     startIndex = strings.Index(tagInput, "<")
   }
 
