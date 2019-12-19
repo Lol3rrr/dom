@@ -16,7 +16,7 @@ func parseElementInfo(rawElementInfo string) (string, map[string]string) {
   }
 
   elemType := rawElementInfo[:typeEnd]
-  elemAttributes := parseElementParts(rawElementInfo)
+  elemAttributes := parseElementParts(rawElementInfo[typeEnd:])
 
   return elemType, elemAttributes
 }
