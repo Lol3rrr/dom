@@ -10,9 +10,9 @@ func parseElementParts(input string) map[string]string {
 
   parts := strings.Split(input, " ")
   for _, part := range parts {
-    key, value := parseElementPart(part)
+    key, value, worked := parseElementPart(part)
 
-    if len(key) == 0 || len(value) == 0 {
+    if !worked {
       continue
     }
 
