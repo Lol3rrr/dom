@@ -17,11 +17,12 @@ func ParseTagList(tagInput string) (TagList) {
       break
     }
 
+    contentEnd := endIndex
     if tagInput[endIndex - 1] == '/' {
-      endIndex--
+      contentEnd--
     }
 
-    content := tagInput[startIndex + 1: endIndex]
+    content := tagInput[startIndex + 1: contentEnd]
     tagType, tagAtr := parseElementInfo(content)
     tag := Tag{
       Type: tagType,

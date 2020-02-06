@@ -47,6 +47,25 @@ func TestParseTagList(t *testing.T) {
         },
       },
     },
+    {
+      InputDom: "<p class=\"yikes\"/><p name=\"testName\">",
+      Output: TagList{
+        Tags: []Tag{
+          Tag{
+            Type: "p",
+            Attributes: map[string]string{
+              "class": "yikes",
+            },
+          },
+          Tag{
+            Type: "p",
+            Attributes: map[string]string{
+              "name": "testName",
+            },
+          },
+        },
+      },
+    },
   }
 
   for _, table := range tables {
