@@ -13,8 +13,12 @@ func ParseTagList(tagInput string) (TagList) {
   startIndex := strings.Index(tagInput, "<")
   for startIndex > -1 {
     endIndex := strings.Index(tagInput, ">")
-    if endIndex == -1 {
+    if endIndex <= 0 {
       break
+    }
+
+    if tagInput[endIndex - 1] == '/' {
+      endIndex--
     }
 
     content := tagInput[startIndex + 1: endIndex]

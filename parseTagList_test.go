@@ -2,6 +2,7 @@ package dom
 
 import (
   "testing"
+  "reflect"
 )
 
 func TestParseTagList(t *testing.T) {
@@ -33,6 +34,19 @@ func TestParseTagList(t *testing.T) {
         },
       },
     },
+    {
+      InputDom: "<p class=\"yikes\"/>",
+      Output: TagList{
+        Tags: []Tag{
+          Tag{
+            Type: "p",
+            Attributes: map[string]string{
+              "class": "yikes",
+            },
+          },
+        },
+      },
+    },
   }
 
   for _, table := range tables {
@@ -41,8 +55,10 @@ func TestParseTagList(t *testing.T) {
 
     result := ParseTagList(inputDom)
 
-    if len(result.Tags) != len(output.Tags) {
+    if !reflect.DeepEqual(result.Tags, output.Tags) {
       t.Errorf("Did not parse the Tag Lists correctly \n")
+      t.Errorf("Returned %v \n", result.Tags)
+      t.Errorf("Expected %v \n", output.Tags)
       continue
     }
   }
